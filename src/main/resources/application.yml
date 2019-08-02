@@ -1,0 +1,24 @@
+server:
+  port: 8080
+  context-path: /springboot
+
+spring:
+  profiles:
+    active: dev
+  http:
+    encoding:
+      charset: UTF-8
+
+mybatis:
+  mapper-locations: classpath:mapping/**/*.xml
+  type-aliases-package: com.taozi.learn.pojo
+
+
+---
+spring:
+  profiles: dev
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: admin123
